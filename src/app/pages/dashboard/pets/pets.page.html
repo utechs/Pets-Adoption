@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Pets</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="mypets-content">
+  <div class="pet-p">
+    <div class="p"><span>Dogs</span></div>
+    <div class="p"><span>Cats</span></div>
+    <div class="p"><span>Birds</span></div>
+    <div class="p"><span>Rabbits</span></div>
+  </div>
+    <div class="list-container">
+      <div class="pet-wrapper" *ngFor="let pet of myPets" (click)="goToPetDetails(pet)">
+        <div class="image-container">
+          <img class="image-res" src="{{pet.img}}" alt="">
+        </div>
+        <div class="info">
+          <div class="info-l"></div>
+          <div class="info-r">
+            <div class="title">{{pet.name}}</div>
+            <div style="font-size: 12px; font-weight: 600; padding: 10px 0; color: #505050;">{{pet.age}} Year | {{pet.gender}}</div>
+            <div style="font-size: 12px; font-weight: 600;  color: #505050;">{{pet.sType}}</div>
+            
+          </div>
+
+        </div>
+    </div>
+    </div>
+</ion-content>

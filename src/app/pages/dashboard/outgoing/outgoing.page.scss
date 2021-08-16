@@ -1,0 +1,57 @@
+.container{
+    text-align: center;
+    --padding-bottom: 16px;
+    --padding-end: 16px;
+    --padding-start: 16px;
+    --padding-top: 16px;
+    --background: rgba(237, 237, 237);
+    .request-container{
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        position: relative;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+        background: white;
+        h4{
+           text-align: left;
+           width: 100%;
+           width: 100%;
+           margin: 0;
+           height: 100%;
+           margin-bottom: 15px;
+           text-transform: capitalize;
+           height: 50px;
+        }
+        .status{
+            color: rgb(255, 87, 34);
+            margin: 5px 0;
+        }
+        .info{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            font-size: 0.55rem;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .c-b{
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: red;
+            height: 100%;
+            width: 40px;
+            color: white;
+            a{
+                color: white;
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                align-items: center;
+            }
+        }
+    }
+}

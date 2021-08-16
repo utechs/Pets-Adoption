@@ -1,5 +1,7 @@
 {
   "name": "Pets-Adoption",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

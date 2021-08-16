@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="toolbar-holder">
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="start" (click)="signOut()">
+      <ion-icon name="power-outline"></ion-icon>
+    </ion-buttons>
+    
+    <ion-buttons slot="end" [routerLink]="['/home']">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-content">
+  <div class="profile-container" *ngIf="angularFire.user | async as user">
+    <div class="avatar-container">
+      <img class="user-image" [src]="user.photoURL">
+    </div>
+    <div>{{user.displayName}}</div>
+    <div>{{user.email}}</div>
+    <div>{{user.bio}}</div>
+    
+    
+  </div>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button style="--background: #9767A2;" [routerLink]="['/create']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

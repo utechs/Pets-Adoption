@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Incomings</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+  <div class="request-container" *ngFor="let req of myIncomings">
+    <div>
+      <h4>{{req.petName}}</h4>
+      <div class="info">
+        <span class="sender">Sender Id: {{req.senderId}}</span>
+        <span class="status" [ngStyle]="{'color': req.status == 'Accepted'?'green': 'rgb(255, 87, 34)'}">Status: {{req.status}}</span>
+      </div>
+      <div *ngIf="req.status === 'Pending' " class="c-b" style="right: 0px; background: green">
+        <a (click)="acceptRequest(req.id, req.senderId, req.pid)"><ion-icon name="checkmark-outline"></ion-icon></a>
+      </div>
+      <div *ngIf="req.status === 'Pending' " class="c-b" >
+        <a (click)="rejectRequest(req.id, req.senderId)">X</a>
+      </div>
+      
+    </div>
+    
+  </div>
+</ion-content>

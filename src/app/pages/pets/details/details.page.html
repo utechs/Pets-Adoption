@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: transparent; color: white; padding-top: 0">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pet-details">
+  
+  
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let img of images">
+      <div class="image-container">
+        <img class="image-res" src="{{img}}" alt="">
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <h1 style="padding: 0 15px;">{{ petDetails.name }}</h1>
+  <div>{{ petDetails.stype }}</div>
+  <div class="pet-p">
+    <div class="p"><span>Age</span>{{ petDetails.age }}</div>
+    <div class="p"><span>Sex</span>{{ petDetails.gender }}</div>
+    <div class="p"><span>color</span>{{ petDetails.color }}</div>
+    <div class="p"><span>Blood</span>{{ petDetails.blood }}</div>
+  </div>
+  <div class="owner">
+    <div>{{owner?.fName}}</div>
+    <div>rating</div>
+  </div>
+  <div class="pet-desc">{{ petDetails.description }}</div>
+  <div class="button-container" *ngIf="!isGuest; else login">
+    <a class="button-pet" (click)="makeAdoptionRequest()">Adopt</a>
+  </div>
+  <ng-template #login>
+    <div class="button-container">
+      <a class="button-pet" [routerLink]="['/login']">Login</a>
+    </div>
+  </ng-template>
+</ion-content>
